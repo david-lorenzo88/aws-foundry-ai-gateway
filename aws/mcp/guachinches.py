@@ -1,8 +1,9 @@
-"""Catalogue of real guachinches in Tenerife and the search over it.
+"""Catalogue of guachinches in Tenerife and the search over it.
 
 The catalogue is a snapshot built from Google Places by scripts/fetch_guachinches.py (data/guachinches.json).
 Features come from Places attributes; dishes, wines and views are inferred from summaries and reviews,
-so they can be incomplete.
+so they can be incomplete. Without that file (it isn't in the repo), the server uses invented sample data
+from scripts/make_sample_data.py (data/guachinches.sample.json).
 """
 
 import json
@@ -10,14 +11,22 @@ from pathlib import Path
 
 from classify import MUNICIPALITY_ZONE, ZONE_REGION, norm
 
-_DATA = json.loads((Path(__file__).parent / "data" / "guachinches.json").read_text())
+_DIR = Path(__file__).parent / "data"
+_FILE = _DIR / "guachinches.json"
+_DATA = json.loads((_FILE if _FILE.exists() else _DIR / "guachinches.sample.json").read_text())
 GUACHINCHES: list[dict] = _DATA["guachinches"]
 BY_ID = {g["id"]: g for g in GUACHINCHES}
 
-DATA_NOTE = (
-    f"Real places from Google Places (snapshot {_DATA['fetched_at'][:10]}). Features come from Google's "
-    "attributes; dishes and wines are inferred from reviews and may be incomplete. Place data © Google."
-)
+if _DATA.get("sample"):
+    DATA_NOTE = (
+        "Invented sample data: these guachinches don't exist (names, addresses, ratings and dishes are made up; "
+        "towns and zones are real). Say so if the user asks for real recommendations."
+    )
+else:
+    DATA_NOTE = (
+        f"Real places from Google Places (snapshot {_DATA['fetched_at'][:10]}). Features come from Google's "
+        "attributes; dishes and wines are inferred from reviews and may be incomplete. Place data © Google."
+    )
 
 # Feature ids and the words people use for them (Spanish and English).
 FEATURES = {

@@ -1,0 +1,2047 @@
+{
+ "source": "Invented sample data (scripts/make_sample_data.py)",
+ "attribution": "Fictional places; towns, zones and regions are real",
+ "fetched_at": "2026-11-03T00:00:00+00:00",
+ "sample": true,
+ "guachinches": [
+  {
+   "id": "demo-bodegon-tia-candelaria",
+   "name": "Bodegón Tía Candelaria",
+   "municipality": "Los Realejos",
+   "locality": "Palo Blanco",
+   "zone": "Valle de La Orotava",
+   "region": "Norte",
+   "address": "Carretera Las Toscas, 144, 38410 Palo Blanco, Santa Cruz de Tenerife",
+   "latitude": 28.393219,
+   "longitude": -16.573525,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.393219,-16.573525",
+   "rating": 4.4,
+   "rating_count": 624,
+   "price_per_person": 25,
+   "open_days": [
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: Cerrado",
+    "miércoles: Cerrado",
+    "jueves: 12:00–17:00",
+    "viernes: 12:00–17:00",
+    "sábado: 12:00–17:00",
+    "domingo: 12:00–17:00"
+   ],
+   "dishes": [
+    "carne fiesta",
+    "escaldón de gofio",
+    "carne de cochino negro",
+    "pescado"
+   ],
+   "features": [
+    "parking",
+    "groups",
+    "terrace"
+   ],
+   "wines": [
+    "rosado"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-la-parra-de-el-lomo-alto",
+   "name": "La Parra de El Lomo Alto",
+   "municipality": "El Sauzal",
+   "locality": "Ravelo",
+   "zone": "Acentejo",
+   "region": "Norte",
+   "address": "Camino Real El Calvario, 122, 38360 Ravelo, Santa Cruz de Tenerife",
+   "latitude": 28.486813,
+   "longitude": -16.437789,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.486813,-16.437789",
+   "rating": 4.6,
+   "rating_count": 1152,
+   "price_per_person": 15,
+   "open_days": [
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: Cerrado",
+    "miércoles: Cerrado",
+    "jueves: 13:00–23:00",
+    "viernes: 13:00–23:00",
+    "sábado: 13:00–23:00",
+    "domingo: 13:00–23:00"
+   ],
+   "dishes": [
+    "queso asado con mojo",
+    "carne de cochino negro",
+    "pulpo",
+    "ropa vieja",
+    "huevos con papas",
+    "bistec"
+   ],
+   "features": [
+    "parking",
+    "groups",
+    "terrace"
+   ],
+   "wines": [
+    "rosado"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-la-parra-de-don-fermin",
+   "name": "La Parra de Don Fermín",
+   "municipality": "Puerto de la Cruz",
+   "locality": "Puerto de la Cruz",
+   "zone": "Valle de La Orotava",
+   "region": "Norte",
+   "address": "Camino Real Las Lajas, 124, 38400 Puerto de la Cruz, Santa Cruz de Tenerife",
+   "latitude": 28.402223,
+   "longitude": -16.556404,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.402223,-16.556404",
+   "rating": 4.8,
+   "rating_count": 1363,
+   "price_per_person": 15,
+   "open_days": [
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: Cerrado",
+    "miércoles: Cerrado",
+    "jueves: 13:00–23:00",
+    "viernes: 13:00–23:00",
+    "sábado: 13:00–23:00",
+    "domingo: 13:00–23:00"
+   ],
+   "dishes": [
+    "garbanzas",
+    "queso asado con mojo",
+    "pescado",
+    "ropa vieja",
+    "huevos con papas",
+    "pollo"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "groups",
+    "reservations",
+    "wheelchair_accessible",
+    "terrace"
+   ],
+   "wines": [
+    "blanco",
+    "tinto"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-guachinche-los-almendros",
+   "name": "Guachinche Los Almendros",
+   "municipality": "Puerto de la Cruz",
+   "locality": "Puerto de la Cruz",
+   "zone": "Valle de La Orotava",
+   "region": "Norte",
+   "address": "Calle La Las Lajas, 131, 38400 Puerto de la Cruz, Santa Cruz de Tenerife",
+   "latitude": 28.404212,
+   "longitude": -16.54917,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.404212,-16.54917",
+   "rating": 4.2,
+   "rating_count": 890,
+   "price_per_person": 15,
+   "open_days": [
+    "martes",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: 13:00–17:00",
+    "miércoles: Cerrado",
+    "jueves: 13:00–17:00",
+    "viernes: 13:00–17:00",
+    "sábado: 13:00–17:00",
+    "domingo: 13:00–17:00"
+   ],
+   "dishes": [
+    "queso asado con mojo",
+    "carne de cochino negro",
+    "ropa vieja",
+    "bistec"
+   ],
+   "features": [
+    "parking",
+    "groups",
+    "reservations",
+    "accepts_cards",
+    "wheelchair_accessible",
+    "sells_wine"
+   ],
+   "wines": [
+    "blanco",
+    "tinto"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-guachinche-la-higuera-vieja",
+   "name": "Guachinche La Higuera Vieja",
+   "municipality": "La Guancha",
+   "locality": "La Guancha",
+   "zone": "Icod",
+   "region": "Norte",
+   "address": "Camino Real La Montañeta, 88, 38440 La Guancha, Santa Cruz de Tenerife",
+   "latitude": 28.373481,
+   "longitude": -16.659279,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.373481,-16.659279",
+   "rating": 4.4,
+   "rating_count": 512,
+   "price_per_person": 12,
+   "open_days": [
+    "lunes",
+    "miércoles",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: 12:00–17:00",
+    "martes: Cerrado",
+    "miércoles: 12:00–17:00",
+    "jueves: 12:00–17:00",
+    "viernes: 12:00–17:00",
+    "sábado: 12:00–17:00",
+    "domingo: 12:00–17:00"
+   ],
+   "dishes": [
+    "carne fiesta",
+    "costillas con papas y piña",
+    "escaldón de gofio",
+    "queso asado con mojo",
+    "chuletas de cerdo",
+    "carne de cabra"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "accepts_cards",
+    "wheelchair_accessible"
+   ],
+   "wines": [
+    "rosado",
+    "tinto"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-bodega-chano-el-del-monte",
+   "name": "Bodega Chano el del Monte",
+   "municipality": "Arafo",
+   "locality": "Arafo",
+   "zone": "Valle de Güímar",
+   "region": "Sur",
+   "address": "Calle San Antonio, 134, 38550 Arafo, Santa Cruz de Tenerife",
+   "latitude": 28.329156,
+   "longitude": -16.411166,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.329156,-16.411166",
+   "rating": 4.4,
+   "rating_count": 280,
+   "price_per_person": 15,
+   "open_days": [
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: Cerrado",
+    "miércoles: Cerrado",
+    "jueves: 13:00–18:00",
+    "viernes: 13:00–18:00",
+    "sábado: 13:00–18:00",
+    "domingo: 13:00–18:00"
+   ],
+   "dishes": [
+    "carne fiesta",
+    "queso asado con mojo",
+    "papas arrugadas con mojo"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "reservations",
+    "wheelchair_accessible",
+    "terrace",
+    "views",
+    "sells_wine"
+   ],
+   "wines": [
+    "blanco",
+    "rosado",
+    "tinto"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-guachinche-el-barranquillo",
+   "name": "Guachinche El Barranquillo",
+   "municipality": "Arona",
+   "locality": "Arona",
+   "zone": "Sur",
+   "region": "Sur",
+   "address": "Calle Las Toscas, 177, 38640 Arona, Santa Cruz de Tenerife",
+   "latitude": 28.102496,
+   "longitude": -16.683208,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.102496,-16.683208",
+   "rating": 4.0,
+   "rating_count": 764,
+   "price_per_person": 15,
+   "open_days": [
+    "lunes",
+    "miércoles",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: 12:00–22:00",
+    "martes: Cerrado",
+    "miércoles: 12:00–22:00",
+    "jueves: 12:00–22:00",
+    "viernes: 12:00–22:00",
+    "sábado: 12:00–22:00",
+    "domingo: 12:00–22:00"
+   ],
+   "dishes": [
+    "chuletas de cerdo",
+    "carne de cabra",
+    "bistec"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "groups",
+    "reservations",
+    "dog_friendly",
+    "sells_wine"
+   ],
+   "wines": [
+    "blanco",
+    "tinto"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-guachinche-las-tres-pipas",
+   "name": "Guachinche Las Tres Pipas",
+   "municipality": "San Cristóbal de La Laguna",
+   "locality": "Valle de Guerra",
+   "zone": "Área Metropolitana",
+   "region": "Área Metropolitana",
+   "address": "Camino Real El Calvario, 32, 38205 Valle de Guerra, Santa Cruz de Tenerife",
+   "latitude": 28.478873,
+   "longitude": -16.321853,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.478873,-16.321853",
+   "rating": 4.6,
+   "rating_count": 1061,
+   "price_per_person": 15,
+   "open_days": [
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: Cerrado",
+    "miércoles: Cerrado",
+    "jueves: 12:00–17:00",
+    "viernes: 12:00–17:00",
+    "sábado: 12:00–17:00",
+    "domingo: 12:00–17:00"
+   ],
+   "dishes": [
+    "costillas con papas y piña",
+    "queso asado con mojo",
+    "carne de cochino negro",
+    "pescado",
+    "croquetas",
+    "bistec"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "groups",
+    "reservations",
+    "terrace",
+    "live_music"
+   ],
+   "wines": [
+    "blanco",
+    "rosado"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-guachinche-la-garrafa-llena",
+   "name": "Guachinche La Garrafa Llena",
+   "municipality": "Los Silos",
+   "locality": "Aregume",
+   "zone": "Isla Baja",
+   "region": "Norte",
+   "address": "Camino Real El Monte, 63, 38470 Aregume, Santa Cruz de Tenerife",
+   "latitude": 28.360949,
+   "longitude": -16.804001,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.360949,-16.804001",
+   "rating": 4.7,
+   "rating_count": 1391,
+   "price_per_person": 15,
+   "open_days": [
+    "lunes",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: 13:00–17:00",
+    "martes: Cerrado",
+    "miércoles: Cerrado",
+    "jueves: 13:00–17:00",
+    "viernes: 13:00–17:00",
+    "sábado: 13:00–17:00",
+    "domingo: 13:00–17:00"
+   ],
+   "dishes": [
+    "carne fiesta",
+    "escaldón de gofio",
+    "pulpo",
+    "croquetas"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "groups",
+    "accepts_cards",
+    "terrace",
+    "dog_friendly",
+    "sells_wine"
+   ],
+   "wines": [
+    "blanco",
+    "rosado"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-bodegon-mi-abuela-rosario",
+   "name": "Bodegón Mi Abuela Rosario",
+   "municipality": "Santa Úrsula",
+   "locality": "La Corujera",
+   "zone": "Acentejo",
+   "region": "Norte",
+   "address": "Camino Real Las Lajas, 94, 38390 La Corujera, Santa Cruz de Tenerife",
+   "latitude": 28.414398,
+   "longitude": -16.487012,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.414398,-16.487012",
+   "rating": 4.9,
+   "rating_count": 511,
+   "price_per_person": 15,
+   "open_days": [
+    "miércoles",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: Cerrado",
+    "miércoles: 13:00–17:00",
+    "jueves: 13:00–17:00",
+    "viernes: 13:00–17:00",
+    "sábado: 13:00–17:00",
+    "domingo: 13:00–17:00"
+   ],
+   "dishes": [
+    "queso asado con mojo",
+    "papas arrugadas con mojo",
+    "carne de cabra",
+    "pescado",
+    "bistec"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "groups",
+    "accepts_cards",
+    "wheelchair_accessible",
+    "live_music"
+   ],
+   "wines": [
+    "blanco",
+    "rosado",
+    "tinto"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-lagar-el-tostadero",
+   "name": "Lagar El Tostadero",
+   "municipality": "El Sauzal",
+   "locality": "El Sauzal",
+   "zone": "Acentejo",
+   "region": "Norte",
+   "address": "Calle Las Lajas, 151, 38360 El Sauzal, Santa Cruz de Tenerife",
+   "latitude": 28.487529,
+   "longitude": -16.431838,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.487529,-16.431838",
+   "rating": 4.2,
+   "rating_count": 126,
+   "price_per_person": 20,
+   "open_days": [
+    "miércoles",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: Cerrado",
+    "miércoles: 12:00–23:00",
+    "jueves: 12:00–23:00",
+    "viernes: 12:00–23:00",
+    "sábado: 12:00–23:00",
+    "domingo: 12:00–23:00"
+   ],
+   "dishes": [
+    "costillas con papas y piña",
+    "escaldón de gofio",
+    "chuletas de cerdo",
+    "ropa vieja",
+    "bistec",
+    "pollo"
+   ],
+   "features": [
+    "dog_friendly"
+   ],
+   "wines": [
+    "rosado"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-bodega-los-castanos",
+   "name": "Bodega Los Castaños",
+   "municipality": "Puerto de la Cruz",
+   "locality": "Las Arenas",
+   "zone": "Valle de La Orotava",
+   "region": "Norte",
+   "address": "Calle San Antonio, 140, 38400 Las Arenas, Santa Cruz de Tenerife",
+   "latitude": 28.40945,
+   "longitude": -16.542304,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.40945,-16.542304",
+   "rating": 4.0,
+   "rating_count": 93,
+   "price_per_person": 12,
+   "open_days": [
+    "lunes",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: 13:00–22:00",
+    "martes: Cerrado",
+    "miércoles: Cerrado",
+    "jueves: 13:00–22:00",
+    "viernes: 13:00–22:00",
+    "sábado: 13:00–22:00",
+    "domingo: 13:00–22:00"
+   ],
+   "dishes": [
+    "conejo en salmorejo",
+    "pescado",
+    "pollo"
+   ],
+   "features": [
+    "parking",
+    "groups",
+    "accepts_cards",
+    "terrace"
+   ],
+   "wines": [
+    "rosado",
+    "tinto"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-la-parra-de-la-vina-de-nicolas",
+   "name": "La Parra de La Viña de Nicolás",
+   "municipality": "La Victoria de Acentejo",
+   "locality": "El Lomo",
+   "zone": "Acentejo",
+   "region": "Norte",
+   "address": "Carretera La Vera, 171, 38380 El Lomo, Santa Cruz de Tenerife",
+   "latitude": 28.423037,
+   "longitude": -16.449359,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.423037,-16.449359",
+   "rating": 4.1,
+   "rating_count": 700,
+   "price_per_person": 20,
+   "open_days": [
+    "lunes",
+    "martes",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: 12:00–23:00",
+    "martes: 12:00–23:00",
+    "miércoles: Cerrado",
+    "jueves: 12:00–23:00",
+    "viernes: 12:00–23:00",
+    "sábado: 12:00–23:00",
+    "domingo: 12:00–23:00"
+   ],
+   "dishes": [
+    "conejo en salmorejo",
+    "escaldón de gofio",
+    "carne de cabra",
+    "pulpo",
+    "huevos con papas"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "groups",
+    "reservations",
+    "accepts_cards",
+    "terrace",
+    "sells_wine"
+   ],
+   "wines": [
+    "blanco"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-bodegon-el-pajar",
+   "name": "Bodegón El Pajar",
+   "municipality": "Puerto de la Cruz",
+   "locality": "Las Arenas",
+   "zone": "Valle de La Orotava",
+   "region": "Norte",
+   "address": "Camino Los Majuelos, 86, 38400 Las Arenas, Santa Cruz de Tenerife",
+   "latitude": 28.420212,
+   "longitude": -16.551597,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.420212,-16.551597",
+   "rating": 4.6,
+   "rating_count": 724,
+   "price_per_person": 12,
+   "open_days": [
+    "miércoles",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: Cerrado",
+    "miércoles: 13:00–18:00",
+    "jueves: 13:00–18:00",
+    "viernes: 13:00–18:00",
+    "sábado: 13:00–18:00",
+    "domingo: 13:00–18:00"
+   ],
+   "dishes": [
+    "escaldón de gofio",
+    "queso asado con mojo",
+    "carne de cabra",
+    "huevos con papas",
+    "bistec",
+    "pollo"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "groups",
+    "reservations",
+    "wheelchair_accessible",
+    "terrace",
+    "sells_wine"
+   ],
+   "wines": [
+    "blanco",
+    "rosado",
+    "tinto"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-lagar-dona-eulogia",
+   "name": "Lagar Doña Eulogia",
+   "municipality": "La Victoria de Acentejo",
+   "locality": "La Victoria de Acentejo",
+   "zone": "Acentejo",
+   "region": "Norte",
+   "address": "Camino La Cruz, 86, 38380 La Victoria de Acentejo, Santa Cruz de Tenerife",
+   "latitude": 28.437386,
+   "longitude": -16.472748,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.437386,-16.472748",
+   "rating": 4.9,
+   "rating_count": 984,
+   "price_per_person": 15,
+   "open_days": [
+    "lunes",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: 12:30–23:00",
+    "martes: Cerrado",
+    "miércoles: Cerrado",
+    "jueves: 12:30–23:00",
+    "viernes: 12:30–23:00",
+    "sábado: 12:30–23:00",
+    "domingo: 12:30–23:00"
+   ],
+   "dishes": [
+    "conejo en salmorejo",
+    "carne de cochino negro",
+    "pescado",
+    "ropa vieja"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "groups",
+    "reservations",
+    "wheelchair_accessible",
+    "terrace",
+    "dog_friendly",
+    "sells_wine"
+   ],
+   "wines": [
+    "rosado",
+    "tinto"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-bodegon-el-rincon-de-pancho",
+   "name": "Bodegón El Rincón de Pancho",
+   "municipality": "Tacoronte",
+   "locality": "Agua García",
+   "zone": "Acentejo",
+   "region": "Norte",
+   "address": "Calle San Antonio, 72, 38350 Agua García, Santa Cruz de Tenerife",
+   "latitude": 28.467593,
+   "longitude": -16.415499,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.467593,-16.415499",
+   "rating": 4.4,
+   "rating_count": 854,
+   "price_per_person": 15,
+   "open_days": [
+    "martes",
+    "miércoles",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: 13:00–18:00",
+    "miércoles: 13:00–18:00",
+    "jueves: 13:00–18:00",
+    "viernes: 13:00–18:00",
+    "sábado: 13:00–18:00",
+    "domingo: 13:00–18:00"
+   ],
+   "dishes": [
+    "costillas con papas y piña",
+    "conejo en salmorejo",
+    "pescado",
+    "ropa vieja"
+   ],
+   "features": [
+    "groups",
+    "reservations",
+    "accepts_cards",
+    "terrace",
+    "vegetarian_options",
+    "sells_wine"
+   ],
+   "wines": [
+    "blanco",
+    "rosado"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-lagar-las-brumas",
+   "name": "Lagar Las Brumas",
+   "municipality": "Icod de los Vinos",
+   "locality": "Icod de los Vinos",
+   "zone": "Icod",
+   "region": "Norte",
+   "address": "Calle El Medio, 111, 38430 Icod de los Vinos, Santa Cruz de Tenerife",
+   "latitude": 28.371369,
+   "longitude": -16.70462,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.371369,-16.70462",
+   "rating": 4.4,
+   "rating_count": 1113,
+   "price_per_person": 15,
+   "open_days": [
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: Cerrado",
+    "miércoles: Cerrado",
+    "jueves: 12:30–22:00",
+    "viernes: 12:30–22:00",
+    "sábado: 12:30–22:00",
+    "domingo: 12:30–22:00"
+   ],
+   "dishes": [
+    "potaje",
+    "chuletas de cerdo",
+    "huevos con papas",
+    "pollo"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "groups",
+    "reservations"
+   ],
+   "wines": [
+    "blanco",
+    "tinto"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-bodega-la-cumbrita",
+   "name": "Bodega La Cumbrita",
+   "municipality": "Santa Cruz de Tenerife",
+   "locality": "Santa Cruz de Tenerife",
+   "zone": "Área Metropolitana",
+   "region": "Área Metropolitana",
+   "address": "Calle El Calvario, 41, 38001 Santa Cruz de Tenerife, Santa Cruz de Tenerife",
+   "latitude": 28.46473,
+   "longitude": -16.250379,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.46473,-16.250379",
+   "rating": 4.3,
+   "rating_count": 1310,
+   "price_per_person": 25,
+   "open_days": [
+    "martes",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: 13:00–18:00",
+    "miércoles: Cerrado",
+    "jueves: 13:00–18:00",
+    "viernes: 13:00–18:00",
+    "sábado: 13:00–18:00",
+    "domingo: 13:00–18:00"
+   ],
+   "dishes": [
+    "papas arrugadas con mojo",
+    "carne de cochino negro",
+    "pescado"
+   ],
+   "features": [
+    "parking",
+    "groups",
+    "reservations",
+    "wheelchair_accessible",
+    "views"
+   ],
+   "wines": [
+    "blanco",
+    "rosado",
+    "tinto"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-guachinche-el-lagar-de-tomas",
+   "name": "Guachinche El Lagar de Tomás",
+   "municipality": "Los Silos",
+   "locality": "Aregume",
+   "zone": "Isla Baja",
+   "region": "Norte",
+   "address": "Carretera Las Lajas, 55, 38470 Aregume, Santa Cruz de Tenerife",
+   "latitude": 28.35772,
+   "longitude": -16.819212,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.35772,-16.819212",
+   "rating": 4.9,
+   "rating_count": 1323,
+   "price_per_person": 25,
+   "open_days": [
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: Cerrado",
+    "miércoles: Cerrado",
+    "jueves: 12:30–22:00",
+    "viernes: 12:30–22:00",
+    "sábado: 12:30–22:00",
+    "domingo: 12:30–22:00"
+   ],
+   "dishes": [
+    "costillas con papas y piña",
+    "conejo en salmorejo",
+    "queso asado con mojo",
+    "pulpo",
+    "croquetas",
+    "bistec"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "groups",
+    "accepts_cards",
+    "terrace",
+    "views"
+   ],
+   "wines": [
+    "blanco",
+    "rosado",
+    "tinto"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-bodega-los-hermanos-hernandez",
+   "name": "Bodega Los Hermanos Hernández",
+   "municipality": "La Matanza de Acentejo",
+   "locality": "La Matanza de Acentejo",
+   "zone": "Acentejo",
+   "region": "Norte",
+   "address": "Camino Real La Montañeta, 164, 38370 La Matanza de Acentejo, Santa Cruz de Tenerife",
+   "latitude": 28.45651,
+   "longitude": -16.456236,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.45651,-16.456236",
+   "rating": 4.5,
+   "rating_count": 1182,
+   "price_per_person": 18,
+   "open_days": [
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: Cerrado",
+    "miércoles: Cerrado",
+    "jueves: 13:00–18:00",
+    "viernes: 13:00–18:00",
+    "sábado: 13:00–18:00",
+    "domingo: 13:00–18:00"
+   ],
+   "dishes": [
+    "conejo en salmorejo",
+    "escaldón de gofio",
+    "chuletas de cerdo",
+    "croquetas",
+    "bistec"
+   ],
+   "features": [
+    "parking",
+    "reservations",
+    "accepts_cards",
+    "wheelchair_accessible",
+    "terrace"
+   ],
+   "wines": [
+    "blanco",
+    "rosado"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-guachinche-la-era",
+   "name": "Guachinche La Era",
+   "municipality": "La Guancha",
+   "locality": "La Guancha",
+   "zone": "Icod",
+   "region": "Norte",
+   "address": "Calle La La Vera, 6, 38440 La Guancha, Santa Cruz de Tenerife",
+   "latitude": 28.37361,
+   "longitude": -16.651273,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.37361,-16.651273",
+   "rating": 4.9,
+   "rating_count": 180,
+   "price_per_person": 12,
+   "open_days": [
+    "miércoles",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: Cerrado",
+    "miércoles: 12:00–17:00",
+    "jueves: 12:00–17:00",
+    "viernes: 12:00–17:00",
+    "sábado: 12:00–17:00",
+    "domingo: 12:00–17:00"
+   ],
+   "dishes": [
+    "garbanzas",
+    "potaje",
+    "escaldón de gofio",
+    "carne de cochino negro",
+    "huevos con papas"
+   ],
+   "features": [
+    "parking",
+    "groups",
+    "reservations",
+    "accepts_cards",
+    "terrace",
+    "views",
+    "sells_wine"
+   ],
+   "wines": [
+    "tinto"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-casa-el-mojo-verde",
+   "name": "Casa El Mojo Verde",
+   "municipality": "Icod de los Vinos",
+   "locality": "Santa Bárbara",
+   "zone": "Icod",
+   "region": "Norte",
+   "address": "Calle La El Lomo, 92, 38430 Santa Bárbara, Santa Cruz de Tenerife",
+   "latitude": 28.364601,
+   "longitude": -16.710662,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.364601,-16.710662",
+   "rating": 4.5,
+   "rating_count": 1099,
+   "price_per_person": 15,
+   "open_days": [
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: Cerrado",
+    "miércoles: Cerrado",
+    "jueves: 13:00–18:00",
+    "viernes: 13:00–18:00",
+    "sábado: 13:00–18:00",
+    "domingo: 13:00–18:00"
+   ],
+   "dishes": [
+    "conejo en salmorejo",
+    "queso asado con mojo",
+    "pescado"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "groups",
+    "reservations",
+    "accepts_cards",
+    "wheelchair_accessible",
+    "views",
+    "sells_wine"
+   ],
+   "wines": [
+    "blanco",
+    "rosado"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-bodegon-la-tea",
+   "name": "Bodegón La Tea",
+   "municipality": "Tegueste",
+   "locality": "El Portezuelo",
+   "zone": "Área Metropolitana",
+   "region": "Área Metropolitana",
+   "address": "Camino Real Los Majuelos, 163, 38280 El Portezuelo, Santa Cruz de Tenerife",
+   "latitude": 28.525242,
+   "longitude": -16.330675,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.525242,-16.330675",
+   "rating": 4.8,
+   "rating_count": 424,
+   "price_per_person": 25,
+   "open_days": [
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: Cerrado",
+    "miércoles: Cerrado",
+    "jueves: 12:00–22:00",
+    "viernes: 12:00–22:00",
+    "sábado: 12:00–22:00",
+    "domingo: 12:00–22:00"
+   ],
+   "dishes": [
+    "conejo en salmorejo",
+    "escaldón de gofio",
+    "carne de cochino negro"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "groups",
+    "reservations",
+    "accepts_cards",
+    "terrace"
+   ],
+   "wines": [
+    "blanco"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-la-parra-de-el-alpendre",
+   "name": "La Parra de El Alpendre",
+   "municipality": "El Rosario",
+   "locality": "La Esperanza",
+   "zone": "Área Metropolitana",
+   "region": "Área Metropolitana",
+   "address": "Camino Real La Vera, 167, 38290 La Esperanza, Santa Cruz de Tenerife",
+   "latitude": 28.448886,
+   "longitude": -16.364488,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.448886,-16.364488",
+   "rating": 4.6,
+   "rating_count": 993,
+   "price_per_person": 12,
+   "open_days": [
+    "martes",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: 13:00–18:00",
+    "miércoles: Cerrado",
+    "jueves: 13:00–18:00",
+    "viernes: 13:00–18:00",
+    "sábado: 13:00–18:00",
+    "domingo: 13:00–18:00"
+   ],
+   "dishes": [
+    "conejo en salmorejo",
+    "potaje",
+    "pescado"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "groups",
+    "reservations",
+    "accepts_cards",
+    "wheelchair_accessible",
+    "terrace",
+    "views",
+    "sells_wine"
+   ],
+   "wines": [
+    "blanco",
+    "rosado"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-guachinche-tio-juanito",
+   "name": "Guachinche Tío Juanito",
+   "municipality": "San Miguel de Abona",
+   "locality": "Las Chafiras",
+   "zone": "Abona",
+   "region": "Sur",
+   "address": "Calle La Vera, 154, 38620 Las Chafiras, Santa Cruz de Tenerife",
+   "latitude": 28.105746,
+   "longitude": -16.618615,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.105746,-16.618615",
+   "rating": 4.6,
+   "rating_count": 1195,
+   "price_per_person": 15,
+   "open_days": [
+    "miércoles",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: Cerrado",
+    "miércoles: 13:00–17:00",
+    "jueves: 13:00–17:00",
+    "viernes: 13:00–17:00",
+    "sábado: 13:00–17:00",
+    "domingo: 13:00–17:00"
+   ],
+   "dishes": [
+    "carne fiesta",
+    "escaldón de gofio",
+    "pescado",
+    "bistec",
+    "pollo"
+   ],
+   "features": [
+    "parking",
+    "groups",
+    "reservations",
+    "accepts_cards",
+    "terrace",
+    "views",
+    "live_music",
+    "sells_wine"
+   ],
+   "wines": [
+    "blanco"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-guachinche-las-hoyas",
+   "name": "Guachinche Las Hoyas",
+   "municipality": "Puerto de la Cruz",
+   "locality": "Las Arenas",
+   "zone": "Valle de La Orotava",
+   "region": "Norte",
+   "address": "Carretera La Vera, 116, 38400 Las Arenas, Santa Cruz de Tenerife",
+   "latitude": 28.407824,
+   "longitude": -16.548685,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.407824,-16.548685",
+   "rating": 4.6,
+   "rating_count": 875,
+   "price_per_person": 25,
+   "open_days": [
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: Cerrado",
+    "miércoles: Cerrado",
+    "jueves: 12:00–22:00",
+    "viernes: 12:00–22:00",
+    "sábado: 12:00–22:00",
+    "domingo: 12:00–22:00"
+   ],
+   "dishes": [
+    "garbanzas",
+    "escaldón de gofio",
+    "chuletas de cerdo",
+    "carne de cochino negro",
+    "carne de cabra"
+   ],
+   "features": [
+    "parking",
+    "groups",
+    "reservations",
+    "wheelchair_accessible",
+    "views"
+   ],
+   "wines": [
+    "blanco",
+    "rosado",
+    "tinto"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-bodegon-el-bernegal",
+   "name": "Bodegón El Bernegal",
+   "municipality": "La Orotava",
+   "locality": "Aguamansa",
+   "zone": "Valle de La Orotava",
+   "region": "Norte",
+   "address": "Camino Las Lajas, 161, 38300 Aguamansa, Santa Cruz de Tenerife",
+   "latitude": 28.385067,
+   "longitude": -16.511511,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.385067,-16.511511",
+   "rating": 4.7,
+   "rating_count": 650,
+   "price_per_person": 15,
+   "open_days": [
+    "lunes",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: 12:00–17:00",
+    "martes: Cerrado",
+    "miércoles: Cerrado",
+    "jueves: 12:00–17:00",
+    "viernes: 12:00–17:00",
+    "sábado: 12:00–17:00",
+    "domingo: 12:00–17:00"
+   ],
+   "dishes": [
+    "potaje",
+    "papas arrugadas con mojo",
+    "carne de cabra",
+    "pulpo",
+    "croquetas",
+    "bistec"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "groups",
+    "reservations",
+    "accepts_cards"
+   ],
+   "wines": [
+    "blanco",
+    "rosado"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-lagar-la-bodeguita-de-chencho",
+   "name": "Lagar La Bodeguita de Chencho",
+   "municipality": "La Orotava",
+   "locality": "La Perdoma",
+   "zone": "Valle de La Orotava",
+   "region": "Norte",
+   "address": "Calle La Cruz, 127, 38300 La Perdoma, Santa Cruz de Tenerife",
+   "latitude": 28.397191,
+   "longitude": -16.522668,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.397191,-16.522668",
+   "rating": 4.5,
+   "rating_count": 1003,
+   "price_per_person": 15,
+   "open_days": [
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: Cerrado",
+    "miércoles: Cerrado",
+    "jueves: 12:30–23:00",
+    "viernes: 12:30–23:00",
+    "sábado: 12:30–23:00",
+    "domingo: 12:30–23:00"
+   ],
+   "dishes": [
+    "carne fiesta",
+    "costillas con papas y piña",
+    "queso asado con mojo",
+    "chuletas de cerdo",
+    "pescado",
+    "bistec"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "groups",
+    "reservations",
+    "wheelchair_accessible",
+    "dog_friendly"
+   ],
+   "wines": [
+    "tinto"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-guachinche-el-sabor-de-antes",
+   "name": "Guachinche El Sabor de Antes",
+   "municipality": "San Miguel de Abona",
+   "locality": "Las Chafiras",
+   "zone": "Abona",
+   "region": "Sur",
+   "address": "Calle La Cruz, 115, 38620 Las Chafiras, Santa Cruz de Tenerife",
+   "latitude": 28.088955,
+   "longitude": -16.615564,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.088955,-16.615564",
+   "rating": 4.4,
+   "rating_count": 238,
+   "price_per_person": 20,
+   "open_days": [
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: Cerrado",
+    "miércoles: Cerrado",
+    "jueves: 12:00–17:00",
+    "viernes: 12:00–17:00",
+    "sábado: 12:00–17:00",
+    "domingo: 12:00–17:00"
+   ],
+   "dishes": [
+    "carne fiesta",
+    "conejo en salmorejo",
+    "queso asado con mojo",
+    "croquetas"
+   ],
+   "features": [
+    "kid_friendly",
+    "groups",
+    "reservations",
+    "accepts_cards",
+    "dog_friendly",
+    "sells_wine"
+   ],
+   "wines": [
+    "blanco"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-guachinche-los-pinos",
+   "name": "Guachinche Los Pinos",
+   "municipality": "Los Silos",
+   "locality": "Aregume",
+   "zone": "Isla Baja",
+   "region": "Norte",
+   "address": "Calle San Antonio, 21, 38470 Aregume, Santa Cruz de Tenerife",
+   "latitude": 28.355472,
+   "longitude": -16.815586,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.355472,-16.815586",
+   "rating": 4.3,
+   "rating_count": 1332,
+   "price_per_person": 12,
+   "open_days": [
+    "lunes",
+    "miércoles",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: 12:00–23:00",
+    "martes: Cerrado",
+    "miércoles: 12:00–23:00",
+    "jueves: 12:00–23:00",
+    "viernes: 12:00–23:00",
+    "sábado: 12:00–23:00",
+    "domingo: 12:00–23:00"
+   ],
+   "dishes": [
+    "garbanzas",
+    "carne de cochino negro",
+    "carne de cabra",
+    "pescado",
+    "ropa vieja"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "groups",
+    "reservations",
+    "accepts_cards",
+    "terrace",
+    "dog_friendly"
+   ],
+   "wines": [
+    "rosado"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-lagar-la-fuente-santa",
+   "name": "Lagar La Fuente Santa",
+   "municipality": "La Guancha",
+   "locality": "La Guancha",
+   "zone": "Icod",
+   "region": "Norte",
+   "address": "Calle La La Montañeta, 88, 38440 La Guancha, Santa Cruz de Tenerife",
+   "latitude": 28.37357,
+   "longitude": -16.651338,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.37357,-16.651338",
+   "rating": 4.6,
+   "rating_count": 1341,
+   "price_per_person": 12,
+   "open_days": [
+    "lunes",
+    "martes",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: 13:00–22:00",
+    "martes: 13:00–22:00",
+    "miércoles: Cerrado",
+    "jueves: 13:00–22:00",
+    "viernes: 13:00–22:00",
+    "sábado: 13:00–22:00",
+    "domingo: 13:00–22:00"
+   ],
+   "dishes": [
+    "queso asado con mojo",
+    "carne de cochino negro",
+    "pulpo",
+    "ropa vieja",
+    "croquetas"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "groups",
+    "accepts_cards"
+   ],
+   "wines": [
+    "rosado",
+    "tinto"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-la-parra-de-el-brezal",
+   "name": "La Parra de El Brezal",
+   "municipality": "Santa Cruz de Tenerife",
+   "locality": "Santa Cruz de Tenerife",
+   "zone": "Área Metropolitana",
+   "region": "Área Metropolitana",
+   "address": "Camino Real La Vera, 100, 38001 Santa Cruz de Tenerife, Santa Cruz de Tenerife",
+   "latitude": 28.476865,
+   "longitude": -16.242175,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.476865,-16.242175",
+   "rating": 4.2,
+   "rating_count": 562,
+   "price_per_person": 10,
+   "open_days": [
+    "lunes",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: 12:30–17:00",
+    "martes: Cerrado",
+    "miércoles: Cerrado",
+    "jueves: 12:30–17:00",
+    "viernes: 12:30–17:00",
+    "sábado: 12:30–17:00",
+    "domingo: 12:30–17:00"
+   ],
+   "dishes": [
+    "costillas con papas y piña",
+    "conejo en salmorejo",
+    "garbanzas",
+    "queso asado con mojo"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "groups",
+    "reservations",
+    "accepts_cards",
+    "wheelchair_accessible",
+    "terrace"
+   ],
+   "wines": [
+    "blanco"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-la-parra-de-mama-carmela",
+   "name": "La Parra de Mamá Carmela",
+   "municipality": "Puerto de la Cruz",
+   "locality": "Puerto de la Cruz",
+   "zone": "Valle de La Orotava",
+   "region": "Norte",
+   "address": "Camino Real San Antonio, 144, 38400 Puerto de la Cruz, Santa Cruz de Tenerife",
+   "latitude": 28.424443,
+   "longitude": -16.536936,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.424443,-16.536936",
+   "rating": 4.6,
+   "rating_count": 938,
+   "price_per_person": 15,
+   "open_days": [
+    "lunes",
+    "martes",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: 13:00–17:00",
+    "martes: 13:00–17:00",
+    "miércoles: Cerrado",
+    "jueves: 13:00–17:00",
+    "viernes: 13:00–17:00",
+    "sábado: 13:00–17:00",
+    "domingo: 13:00–17:00"
+   ],
+   "dishes": [
+    "potaje",
+    "carne de cochino negro",
+    "ropa vieja"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "groups",
+    "reservations",
+    "dog_friendly",
+    "sells_wine"
+   ],
+   "wines": [
+    "blanco"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-guachinche-la-atalaya",
+   "name": "Guachinche La Atalaya",
+   "municipality": "Santa Úrsula",
+   "locality": "Santa Úrsula",
+   "zone": "Acentejo",
+   "region": "Norte",
+   "address": "Camino Las Toscas, 51, 38390 Santa Úrsula, Santa Cruz de Tenerife",
+   "latitude": 28.426868,
+   "longitude": -16.485442,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.426868,-16.485442",
+   "rating": 4.4,
+   "rating_count": 192,
+   "price_per_person": 18,
+   "open_days": [
+    "lunes",
+    "miércoles",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: 13:00–23:00",
+    "martes: Cerrado",
+    "miércoles: 13:00–23:00",
+    "jueves: 13:00–23:00",
+    "viernes: 13:00–23:00",
+    "sábado: 13:00–23:00",
+    "domingo: 13:00–23:00"
+   ],
+   "dishes": [
+    "carne fiesta",
+    "costillas con papas y piña",
+    "conejo en salmorejo",
+    "carne de cochino negro",
+    "carne de cabra",
+    "pescado"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "groups",
+    "accepts_cards",
+    "sells_wine"
+   ],
+   "wines": [
+    "blanco",
+    "tinto"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-guachinche-el-drago-chico",
+   "name": "Guachinche El Drago Chico",
+   "municipality": "La Victoria de Acentejo",
+   "locality": "El Lomo",
+   "zone": "Acentejo",
+   "region": "Norte",
+   "address": "Calle La La Cruz, 161, 38380 El Lomo, Santa Cruz de Tenerife",
+   "latitude": 28.426147,
+   "longitude": -16.465713,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.426147,-16.465713",
+   "rating": 4.9,
+   "rating_count": 1129,
+   "price_per_person": 10,
+   "open_days": [
+    "lunes",
+    "martes",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: 12:00–23:00",
+    "martes: 12:00–23:00",
+    "miércoles: Cerrado",
+    "jueves: 12:00–23:00",
+    "viernes: 12:00–23:00",
+    "sábado: 12:00–23:00",
+    "domingo: 12:00–23:00"
+   ],
+   "dishes": [
+    "carne fiesta",
+    "papas arrugadas con mojo",
+    "chuletas de cerdo",
+    "carne de cabra",
+    "huevos con papas"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "reservations",
+    "accepts_cards",
+    "wheelchair_accessible",
+    "terrace",
+    "sells_wine"
+   ],
+   "wines": [
+    "blanco",
+    "tinto"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-guachinche-las-medianias",
+   "name": "Guachinche Las Medianías",
+   "municipality": "Güímar",
+   "locality": "El Escobonal",
+   "zone": "Valle de Güímar",
+   "region": "Sur",
+   "address": "Carretera El Medio, 9, 38500 El Escobonal, Santa Cruz de Tenerife",
+   "latitude": 28.312422,
+   "longitude": -16.404042,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.312422,-16.404042",
+   "rating": 4.5,
+   "rating_count": 687,
+   "price_per_person": 12,
+   "open_days": [
+    "miércoles",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: Cerrado",
+    "miércoles: 12:30–23:00",
+    "jueves: 12:30–23:00",
+    "viernes: 12:30–23:00",
+    "sábado: 12:30–23:00",
+    "domingo: 12:30–23:00"
+   ],
+   "dishes": [
+    "escaldón de gofio",
+    "carne de cabra",
+    "ropa vieja",
+    "huevos con papas",
+    "bistec"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "groups"
+   ],
+   "wines": [
+    "tinto"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-la-parra-de-el-lagarito",
+   "name": "La Parra de El Lagarito",
+   "municipality": "Tegueste",
+   "locality": "Tegueste",
+   "zone": "Área Metropolitana",
+   "region": "Área Metropolitana",
+   "address": "Calle La El Lomo, 122, 38280 Tegueste, Santa Cruz de Tenerife",
+   "latitude": 28.507026,
+   "longitude": -16.329793,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.507026,-16.329793",
+   "rating": 4.0,
+   "rating_count": 1385,
+   "price_per_person": 25,
+   "open_days": [
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: Cerrado",
+    "miércoles: Cerrado",
+    "jueves: 13:00–22:00",
+    "viernes: 13:00–22:00",
+    "sábado: 13:00–22:00",
+    "domingo: 13:00–22:00"
+   ],
+   "dishes": [
+    "costillas con papas y piña",
+    "garbanzas",
+    "potaje",
+    "pescado",
+    "huevos con papas",
+    "pollo"
+   ],
+   "features": [
+    "kid_friendly",
+    "reservations",
+    "accepts_cards",
+    "terrace"
+   ],
+   "wines": [
+    "rosado"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-guachinche-la-cochinilla",
+   "name": "Guachinche La Cochinilla",
+   "municipality": "El Sauzal",
+   "locality": "El Sauzal",
+   "zone": "Acentejo",
+   "region": "Norte",
+   "address": "Camino Real San Antonio, 57, 38360 El Sauzal, Santa Cruz de Tenerife",
+   "latitude": 28.472678,
+   "longitude": -16.442879,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.472678,-16.442879",
+   "rating": 4.5,
+   "rating_count": 1257,
+   "price_per_person": 25,
+   "open_days": [
+    "martes",
+    "miércoles",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: Cerrado",
+    "martes: 13:00–23:00",
+    "miércoles: 13:00–23:00",
+    "jueves: 13:00–23:00",
+    "viernes: 13:00–23:00",
+    "sábado: 13:00–23:00",
+    "domingo: 13:00–23:00"
+   ],
+   "dishes": [
+    "costillas con papas y piña",
+    "papas arrugadas con mojo",
+    "chuletas de cerdo",
+    "carne de cabra",
+    "pollo"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "reservations",
+    "terrace"
+   ],
+   "wines": [
+    "blanco"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-bodega-juana-la-del-valle",
+   "name": "Bodega Juana la del Valle",
+   "municipality": "Los Silos",
+   "locality": "Los Silos",
+   "zone": "Isla Baja",
+   "region": "Norte",
+   "address": "Camino Las Toscas, 180, 38470 Los Silos, Santa Cruz de Tenerife",
+   "latitude": 28.358479,
+   "longitude": -16.815961,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.358479,-16.815961",
+   "rating": 4.6,
+   "rating_count": 279,
+   "price_per_person": 10,
+   "open_days": [
+    "lunes",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: 12:30–23:00",
+    "martes: Cerrado",
+    "miércoles: Cerrado",
+    "jueves: 12:30–23:00",
+    "viernes: 12:30–23:00",
+    "sábado: 12:30–23:00",
+    "domingo: 12:30–23:00"
+   ],
+   "dishes": [
+    "garbanzas",
+    "papas arrugadas con mojo",
+    "carne de cabra",
+    "bistec"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "accepts_cards",
+    "wheelchair_accessible",
+    "terrace"
+   ],
+   "wines": [
+    "blanco",
+    "rosado",
+    "tinto"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  },
+  {
+   "id": "demo-guachinche-el-granero",
+   "name": "Guachinche El Granero",
+   "municipality": "Santa Úrsula",
+   "locality": "Santa Úrsula",
+   "zone": "Acentejo",
+   "region": "Norte",
+   "address": "Camino El Calvario, 82, 38390 Santa Úrsula, Santa Cruz de Tenerife",
+   "latitude": 28.414325,
+   "longitude": -16.493201,
+   "google_maps_uri": "https://www.google.com/maps/search/?api=1&query=28.414325,-16.493201",
+   "rating": 4.5,
+   "rating_count": 73,
+   "price_per_person": 10,
+   "open_days": [
+    "lunes",
+    "jueves",
+    "viernes",
+    "sábado",
+    "domingo"
+   ],
+   "hours": [
+    "lunes: 12:30–17:00",
+    "martes: Cerrado",
+    "miércoles: Cerrado",
+    "jueves: 12:30–17:00",
+    "viernes: 12:30–17:00",
+    "sábado: 12:30–17:00",
+    "domingo: 12:30–17:00"
+   ],
+   "dishes": [
+    "carne fiesta",
+    "costillas con papas y piña",
+    "garbanzas",
+    "papas arrugadas con mojo",
+    "pulpo",
+    "bistec"
+   ],
+   "features": [
+    "parking",
+    "kid_friendly",
+    "reservations",
+    "accepts_cards",
+    "vegetarian_options",
+    "sells_wine"
+   ],
+   "wines": [
+    "rosado"
+   ],
+   "description": "Guachinche inventado para la demo: el nombre, la dirección y los datos no son reales.",
+   "guachinche_evidence": "invented"
+  }
+ ]
+}

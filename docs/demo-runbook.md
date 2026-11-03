@@ -46,7 +46,9 @@ scripts/get-appinsights.sh rg-aws-foundry-gateway <appinsights-name>
 ### 2b. Guachinche data (Google Places)
 
 The MCP server reads `aws/mcp/data/guachinches.json`, a snapshot of real guachinches. **It isn't in the repo**
-(Google's terms don't allow redistributing Places content), so build it before deploying. You need a Google
+(Google's terms don't allow redistributing Places content). Without it the server falls back to
+`aws/mcp/data/guachinches.sample.json`, 40 **invented** guachinches (`scripts/make_sample_data.py`), which is enough
+to try everything. For real places, build the snapshot before deploying. You need a Google
 Cloud project with billing and **Places API (New)** enabled, plus an API key restricted to it, saved as
 `GOOGLE_MAPS_API_KEY` in `.env`:
 

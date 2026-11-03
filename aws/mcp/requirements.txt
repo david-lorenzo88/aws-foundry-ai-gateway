@@ -1,0 +1,4 @@
+mcp==2.1.1
+mangum==0.22.0
+opentelemetry-sdk==1.45.2
+azure-monitor-opentelemetry-exporter==1.0.0b58

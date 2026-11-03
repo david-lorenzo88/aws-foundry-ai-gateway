@@ -1,0 +1,12 @@
+.env
+.env.tmp
+aws/.aws-sam/
+aws/samconfig.toml
+__pycache__/
+.venv/
+data/raw/
+.claude/
+# Google Places snapshot: Google's terms don't allow redistributing it. Build your own with
+# scripts/fetch_guachinches.py (see docs/demo-runbook.md, step 2b).
+aws/mcp/data/guachinches.json
+.DS_Store

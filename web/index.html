@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¿Dónde comemos? · guachinche-agent</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#001344;--panel:rgba(255,255,255,.06);--line:rgba(255,255,255,.14);--text:#fff;--muted:#b9d3e6;--cyan:#50E6FF;--purple:#D59DFF;--gold:#E3C038;--red:#ff7a73;--green:#46e0a0;--orange:#ffb35c;--mono:"JetBrains Mono",ui-monospace,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.45 "Segoe UI",Inter,system-ui,sans-serif}
+a{color:var(--cyan)}a:hover{color:#fff}
+button{font:inherit;cursor:pointer}
+header{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;padding:16px 24px;border-bottom:1px solid var(--line)}
+.brand h1{margin:0;font-size:22px;color:var(--cyan)}
+.brand div{font-size:13px;color:var(--muted)}
+.spacer{flex:1}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:20px;border:1px solid var(--line);font-size:13px;font-weight:600;white-space:nowrap}
+.dot{width:10px;height:10px;border-radius:5px;background:var(--muted)}
+.ok .dot{background:var(--green)}.bad{border-color:var(--red);color:var(--red)}.bad .dot{background:var(--red)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.seg button{border:0;background:transparent;color:var(--muted);padding:6px 14px;font-size:13px;font-weight:600}
+.seg button[aria-pressed=true]{background:var(--cyan);color:var(--bg)}
+.seg button.direct[aria-pressed=true]{background:var(--gold)}
+label.small{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px}
+input,textarea,select{font:inherit;color:var(--text);background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
+.ghost{background:transparent;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:6px 12px;font-size:13px}
+.ghost:hover{border-color:var(--cyan)}
+main{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:20px;padding:20px 24px;height:calc(100vh - 77px)}
+@media (max-width:1000px){main{grid-template-columns:1fr;height:auto}}
+section{background:var(--panel);border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column;min-height:0}
+section h2{margin:0;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--purple);padding:14px 18px 0}
+#chat{flex:1;overflow:auto;padding:16px 18px;display:flex;flex-direction:column;gap:12px}
+.msg{max-width:88%;padding:10px 14px;border-radius:12px;white-space:pre-wrap;word-wrap:break-word}
+.user{align-self:flex-end;background:#0F6FC6}
+.agent{align-self:flex-start;background:rgba(255,255,255,.09)}
+.err{align-self:flex-start;background:rgba(255,122,115,.12);border:1px solid var(--red)}
+.err strong{color:var(--red)}
+.meta{font-size:12px;color:var(--muted);margin-top:6px}
+.agent .md{white-space:normal}
+.md div{min-height:1em}.md .h{font-weight:700;color:var(--cyan);margin-top:6px}.md .li{padding-left:8px}
+.md hr{border:0;border-top:1px solid var(--line);margin:8px 0}
+.suggest{display:flex;flex-wrap:wrap;gap:8px;padding:0 18px 10px}
+.suggest button{background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:16px;padding:5px 12px;font-size:13px}
+.suggest button:hover{border-color:var(--cyan);color:#fff}
+form.send{display:flex;gap:10px;padding:12px 18px 16px;border-top:1px solid var(--line)}
+form.send input{flex:1;padding:10px 12px}
+.primary{background:var(--cyan);color:var(--bg);border:0;border-radius:8px;padding:10px 18px;font-weight:700}
+.primary:disabled{opacity:.5;cursor:wait}
+.right{display:flex;flex-direction:column;gap:20px;min-height:0}
+#trace{flex:1;min-height:0}
+#traceBody{overflow:auto;padding:12px 18px 16px}
+.path{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:6px 0 12px}
+.hop{padding:6px 10px;border-radius:8px;border:1px solid var(--line);font-size:13px;font-weight:600}
+.hop.ok{border-color:var(--green);color:var(--green)}
+.hop.fail{border-color:var(--red);color:var(--red);background:rgba(255,122,115,.1)}
+.hop.skip{opacity:.35;text-decoration:line-through}
+.arrow{color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-bottom:12px}
+.fact{background:rgba(0,0,0,.2);border-radius:8px;padding:8px 10px}
+.fact div:first-child{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.fact div:last-child{font-family:var(--mono);font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.banner{padding:10px 12px;border-radius:8px;margin-bottom:12px;font-weight:600}
+.banner.red{background:rgba(255,122,115,.14);border:1px solid var(--red);color:#ffd2cf}
+.banner.gold{background:rgba(227,192,56,.12);border:1px solid var(--gold);color:#f4e3a0}
+details.tool{border:1px solid var(--line);border-radius:10px;margin-bottom:8px;background:rgba(0,0,0,.15)}
+details.tool[data-state=blocked]{border-color:var(--red);background:rgba(255,122,115,.08)}
+details.tool summary{list-style:none;display:flex;align-items:center;gap:10px;padding:8px 12px;cursor:pointer}
+details.tool summary::-webkit-details-marker{display:none}
+.tname{font-family:var(--mono);font-weight:600}
+.tag{font-size:11px;font-weight:700;padding:3px 8px;border-radius:10px;color:var(--bg)}
+.tag.ok{background:var(--green)}.tag.error{background:var(--orange)}.tag.blocked{background:var(--red)}
+.hidden{display:none!important}
+.ms{margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--muted)}
+pre{margin:0;padding:8px 12px 12px;font-family:var(--mono);font-size:12px;white-space:pre-wrap;word-break:break-word;color:#dbefff;max-height:220px;overflow:auto}
+.empty{color:var(--muted);font-size:14px;padding:6px 0}
+#gw{padding-bottom:14px}
+.tools{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:6px 18px;align-items:center;padding:12px 18px 6px}
+.tools .th{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;text-align:center}
+.tools .th:first-child{text-align:left}
+.tools .tn{font-family:var(--mono);font-size:13px;padding:4px 8px;border-radius:8px;border:1px solid transparent}
+.tools .tn.on{border-color:var(--red);background:rgba(255,122,115,.1)}
+.tools .cell{display:flex;justify-content:center}
+.tools .cell.off{opacity:.3}
+.seg button.tb[aria-pressed=true]{background:var(--purple)}
+.hop.tbx{border-color:var(--purple);color:var(--purple)}
+.switch{position:relative;width:44px;height:24px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.12);flex:none;padding:0}
+.switch::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:8px;background:#fff;transition:left .15s}
+.switch[aria-checked=true]{background:var(--red);border-color:var(--red)}
+.switch[aria-checked=true]::after{left:23px}
+.note{font-size:12px;color:var(--muted);padding:2px 18px}
+.trylane{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:8px 18px 0}
+.trylane input{flex:1;min-width:180px;font-family:var(--mono);font-size:12px}
+#log{font-family:var(--mono);font-size:12px;color:var(--muted);padding:0 18px 12px;max-height:110px;overflow:auto}
+#log div span{display:inline-block;min-width:36px;font-weight:600}
+.s2{color:var(--green)}.s4{color:var(--red)}.s5{color:var(--orange)}.s0{color:var(--orange)}
+.sr{position:absolute;left:-9999px}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <h1>¿Dónde comemos? · guachinche-agent</h1>
+    <div>AWS Lambda · Strands · Bedrock &nbsp;|&nbsp; tools por MCP &nbsp;|&nbsp; gobernado desde Foundry (AI Gateway + Toolbox)</div>
+  </div>
+  <div class="spacer"></div>
+  <span id="agentChip" class="chip" role="status" aria-live="polite"><span class="dot"></span><span>Comprobando agente…</span></span>
+  <div class="seg" role="group" aria-label="Ruta de las llamadas">
+    <button type="button" id="routeGw" aria-pressed="true">Vía AI Gateway</button>
+    <button type="button" id="routeDirect" class="direct" aria-pressed="false">Directo a AWS</button>
+  </div>
+  <label class="small" for="userId">Usuario <input id="userId" value="demo" size="8" pattern="[A-Za-z0-9_-]{1,64}"></label>
+  <span class="small">Sesión <code id="sessionId">nueva</code></span>
+  <button type="button" class="ghost" id="newSession">Nueva conversación</button>
+</header>
+
+<main>
+  <section aria-label="Chat con el agente">
+    <h2>Conversación</h2>
+    <div id="chat" aria-live="polite"></div>
+    <div class="suggest" id="suggest"></div>
+    <form class="send" id="sendForm">
+      <label class="sr" for="msg">Mensaje</label>
+      <input id="msg" autocomplete="off" placeholder="Pregunta por un guachinche…">
+      <button class="primary" id="sendBtn" type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <div class="right">
+    <section id="trace" aria-label="Traza de la última llamada">
+      <h2>Traza de la última llamada</h2>
+      <div id="traceBody"><div class="empty">Envía un mensaje o prueba una tool para ver por dónde pasa la llamada.</div></div>
+    </section>
+
+    <section id="gw" aria-label="Control de las tools en Foundry">
+      <h2>Control de las tools en Foundry</h2>
+      <div class="tools" id="tools"></div>
+      <div class="note" id="gwNote">Toolbox (Foundry): publica una versión sin la tool y el agente deja de verla. AI Gateway (Azure, opcional): bloquea la llamada. Ni el agente ni el MCP se tocan.</div>
+      <div class="trylane">
+        <label class="sr" for="tryTool">Tool</label>
+        <select id="tryTool"></select>
+        <label class="sr" for="tryArgs">Argumentos JSON</label>
+        <input id="tryArgs" value='{"location": "Tacoronte", "limit": 3}'>
+        <button type="button" class="ghost" id="tryBtn">Probar sin agente</button>
+      </div>
+      <h2 style="padding-top:12px">Peticiones</h2>
+      <div id="log"></div>
+    </section>
+  </div>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const state = { route: 'gateway', toolbox: false, sessionId: null, blocked: [], tbBlocked: [], tools: [], busy: false };
+const SUGGESTIONS = [
+  'Busco un guachinche en el norte con terraza para comer el domingo',
+  'Guárdame el primero en favoritos con la nota: ir con la familia',
+  '¿Qué tengo en favoritos?',
+  'Y en La Laguna, ¿alguno con carne fiesta por menos de 15 €?'
+];
+
+function el(tag, attrs = {}, ...children) {
+  const node = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === 'class') node.className = v; else if (k.startsWith('on')) node.addEventListener(k.slice(2), v); else node.setAttribute(k, v);
+  }
+  for (const c of children.flat()) if (c != null) node.append(c instanceof Node ? c : document.createTextNode(String(c)));
+  return node;
+}
+
+// The agent answers in a small Markdown subset (headings, **bold**, *italic*, [links](url), ---, lists).
+// Render it by building elements, never innerHTML; only Google Maps links become clickable.
+const MAPS = /^https:\/\/(maps\.google\.com|www\.google\.com\/maps|maps\.app\.goo\.gl)\//;
+function inline(text) {
+  const frag = document.createDocumentFragment();
+  const re = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)|(https:\/\/[^\s)\]]+)|\*\*(.+?)\*\*|\*(.+?)\*/g;
+  let last = 0, m;
+  while ((m = re.exec(text))) {
+    frag.append(text.slice(last, m.index));
+    if (m[2] || m[3]) {
+      const url = m[2] || m[3], label = m[1] || 'Google Maps';
+      frag.append(MAPS.test(url) ? el('a', { href: url, target: '_blank', rel: 'noopener' }, label) : label);
+    } else if (m[4]) frag.append(el('strong', {}, m[4]));
+    else if (m[5]) frag.append(el('em', {}, m[5]));
+    last = m.index + m[0].length;
+  }
+  frag.append(text.slice(last));
+  return frag;
+}
+function richText(text) {
+  const box = el('div', { class: 'md' });
+  for (const line of text.split('\n')) {
+    if (/^\s*-{3,}\s*$/.test(line)) { box.append(el('hr')); continue; }
+    const h = line.match(/^#{1,4}\s+(.*)$/);
+    if (h) { box.append(el('div', { class: 'h' }, inline(h[1]))); continue; }
+    const li = line.match(/^\s*[-*]\s+(.*)$/);
+    box.append(el('div', { class: li ? 'li' : '' }, li ? '• ' : '', inline(li ? li[1] : line)));
+  }
+  return box;
+}
+
+async function api(path, body) {
+  const res = await fetch(path, body ? { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) } : {});
+  return res.json();
+}
+
+function log(kind, status, ms, note) {
+  const cls = 's' + String(status)[0];
+  $('log').prepend(el('div', {}, new Date().toLocaleTimeString(), '  ', el('span', { class: cls }, status || 'ERR'), ' ', kind, ' ', ms + ' ms', note ? '  ' + note : ''));
+}
+
+// ---------- agent status ----------
+async function pollStatus() {
+  try {
+    const s = await api('/api/status');
+    const chip = $('agentChip');
+    chip.className = 'chip ' + (s.agent === 'active' ? 'ok' : 'bad');
+    chip.lastChild.textContent = s.agent === 'active' ? 'Agente activo' : s.agent === 'blocked' ? 'Agente BLOQUEADO en Foundry' : 'Agente no responde (' + s.status + ')';
+  } catch (e) { /* the local server restarting; keep the last state */ }
+}
+
+// ---------- route ----------
+function setRoute(route) {
+  state.route = route;
+  $('routeGw').setAttribute('aria-pressed', route === 'gateway');
+  $('routeDirect').setAttribute('aria-pressed', route === 'direct');
+}
+function newSession() { state.sessionId = null; $('sessionId').textContent = 'nueva'; $('chat').replaceChildren(); }
+
+// ---------- trace rendering ----------
+function hopPath(kind, r) {
+  // kind: 'agent' or 'mcp'. Decide where the call stopped from the HTTP result.
+  const body = r.body || {};
+  const blockedAgent = r.status === 403 && body.error === 'AgentBlocked';
+  const rejectedDirect = r.status === 403 && !blockedAgent;
+  const hops = [['Cliente', 'ok']];
+  if (kind === 'mcp' && r.route === 'toolbox') {
+    const tbBlocked = r.blocked_by === 'toolbox';
+    hops.push(['Toolbox (Foundry)', tbBlocked ? 'fail' : 'ok tbx'], ['AI Gateway', tbBlocked ? 'skip' : r.status ? 'ok' : 'fail']);
+  } else if (r.route === 'gateway') hops.push(['AI Gateway', blockedAgent ? 'fail' : r.status ? 'ok' : 'fail']);
+  else hops.push(['AI Gateway', 'skip']);
+  if (kind === 'agent') {
+    const agentState = blockedAgent ? 'skip' : rejectedDirect || r.status === 401 ? 'fail' : r.status ? 'ok' : 'skip';
+    hops.push(['Agente (Lambda)', agentState]);
+    const debug = (body.debug || (body.detail && body.detail.debug)) || null;
+    const used = debug && debug.tool_calls.length ? 'ok' : 'skip';
+    if (debug && debug.mcp_route === 'toolbox') hops.push(['Toolbox (Foundry)', used === 'ok' ? 'ok tbx' : 'skip'], ['AI Gateway', used], ['MCP', used]);
+    else if (debug) hops.push([`MCP vía ${debug.mcp_route === 'gateway' ? 'gateway' : 'directo'}`, used]);
+    const modelFailed = r.status === 503;
+    if (!blockedAgent && !rejectedDirect && r.status !== 401) hops.push(['Bedrock', modelFailed ? 'fail' : r.status === 200 ? 'ok' : 'skip']);
+  } else {
+    hops.push(['MCP (Lambda)', rejectedDirect ? 'fail' : r.blocked ? 'skip' : r.status === 200 && !r.is_error ? 'ok' : 'fail']);
+  }
+  const path = el('div', { class: 'path' });
+  hops.forEach(([name, s], i) => { if (i) path.append(el('span', { class: 'arrow', 'aria-hidden': 'true' }, '→')); path.append(el('span', { class: 'hop ' + s }, name)); });
+  return path;
+}
+
+function fact(label, value) { return el('div', { class: 'fact' }, el('div', {}, label), el('div', { title: String(value) }, value)); }
+
+function toolRow(call, i) {
+  const st = call.blocked ? 'blocked' : call.status === 'success' || call.ok ? 'ok' : 'error';
+  const label = st === 'blocked' ? (call.blocked_by === 'toolbox' ? 'RECHAZADA POR EL TOOLBOX' : 'BLOQUEADA EN EL GATEWAY') : st === 'ok' ? 'OK' : 'ERROR';
+  let output = call.output || '';
+  try { output = JSON.stringify(JSON.parse(output), null, 2); } catch (e) {}
+  return el('details', { class: 'tool', 'data-state': st },
+    el('summary', {}, el('span', { class: 'ms' }, '#' + (i + 1)), el('span', { class: 'tname' }, call.name), el('span', { class: 'tag ' + st }, label), el('span', { class: 'ms' }, (call.duration_ms ?? '–') + ' ms')),
+    el('pre', {}, 'input  ' + JSON.stringify(call.input || {}, null, 2) + '\n\noutput ' + output));
+}
+
+function renderAgentTrace(r) {
+  const body = r.body || {};
+  const debug = body.debug || (body.detail && body.detail.debug) || null;
+  const box = $('traceBody'); box.replaceChildren();
+  box.append(hopPath('agent', r));
+  if (r.status === 403 && body.error === 'AgentBlocked') box.append(el('div', { class: 'banner red' }, 'Foundry ha bloqueado el agente: el AI Gateway responde 403 y la petición no llega a AWS.'));
+  else if (r.status === 403) box.append(el('div', { class: 'banner red' }, 'AWS rechaza la llamada directa: falta la cabecera que solo pone el AI Gateway.'));
+  else if (r.status === 503) box.append(el('div', { class: 'banner gold' }, (body.detail && body.detail.error) || 'El agente falló.'));
+  else if (r.status !== 200) box.append(el('div', { class: 'banner red' }, 'HTTP ' + r.status + ': ' + JSON.stringify(body).slice(0, 300)));
+  const facts = el('div', { class: 'facts' }, fact('HTTP', r.status || 'red'), fact('Tiempo', r.elapsed_ms + ' ms'), fact('Ruta', r.route === 'gateway' ? 'AI Gateway' : 'Directo'));
+  if (debug) {
+    if (debug.usage) facts.append(fact('Tokens in/out', debug.usage.input_tokens + ' / ' + debug.usage.output_tokens));
+    if (debug.cycles != null) facts.append(fact('Ciclos', debug.cycles));
+    const mcp = { gateway: 'vía gateway', toolbox: 'Toolbox → gateway', direct: 'directo' }[debug.mcp_route] || debug.mcp_route;
+    facts.append(fact('Tools llamadas', debug.tool_calls.length), fact('Tools visibles', debug.tools_available.length + ' de ' + state.tools.length), fact('MCP', mcp), fact('Modelo', debug.model.replace(/^global\.anthropic\./, '')), fact('Historial', debug.history_messages + ' mensajes'));
+  }
+  box.append(facts);
+  const hidden = debug && debug.mcp_route === 'toolbox' && r.status === 200 ? state.tools.filter((t) => !debug.tools_available.includes(t)) : [];
+  if (hidden.length) box.append(el('div', { class: 'banner gold' }, 'El Toolbox no le ofrece al agente: ' + hidden.join(', ') + '. No puede llamarlas porque ni sabe que existen.'));
+  if (debug && debug.tool_calls.length) debug.tool_calls.forEach((c, i) => box.append(toolRow(c, i)));
+  else if (debug) box.append(el('div', { class: 'empty' }, 'El agente no llamó a ninguna tool en esta petición.'));
+}
+
+function renderMcpTrace(r) {
+  const box = $('traceBody'); box.replaceChildren();
+  box.append(hopPath('mcp', r));
+  if (r.status === 403) box.append(el('div', { class: 'banner red' }, 'AWS rechaza la llamada directa al MCP: falta la cabecera que solo pone el AI Gateway.'));
+  if (r.blocked_by === 'toolbox') box.append(el('div', { class: 'banner red' }, 'El Toolbox de Foundry rechaza la llamada: la tool no está en su versión publicada (PermissionDenied).'));
+  else if (r.blocked) box.append(el('div', { class: 'banner red' }, 'El AI Gateway ha respondido por el MCP: la tool está bloqueada y la llamada no llega a AWS.'));
+  const ruta = { gateway: 'AI Gateway', toolbox: 'Toolbox', direct: 'Directo' }[r.route];
+  box.append(el('div', { class: 'facts' }, fact('HTTP', r.status || 'red'), fact('Tiempo', r.elapsed_ms + ' ms'), fact('Ruta', ruta), fact('Llamada', 'sin agente')));
+  box.append(toolRow({ name: r.tool, input: r.args, output: r.output, blocked: r.blocked, blocked_by: r.blocked_by, ok: !r.is_error && r.status === 200, duration_ms: r.elapsed_ms }, 0));
+}
+
+// ---------- chat ----------
+function addMsg(cls, ...content) { const m = el('div', { class: 'msg ' + cls }, ...content); $('chat').append(m); m.scrollIntoView({ block: 'end' }); return m; }
+
+async function send(text) {
+  if (state.busy || !text.trim()) return;
+  state.busy = true; $('sendBtn').disabled = true; $('msg').value = '';
+  addMsg('user', text);
+  const thinking = addMsg('agent', 'pensando…');
+  const t0 = performance.now();
+  const timer = setInterval(() => { thinking.textContent = 'pensando… ' + ((performance.now() - t0) / 1000).toFixed(1) + ' s'; }, 200);
+  try {
+    const r = await api('/api/chat', { message: text, user_id: $('userId').value, session_id: state.sessionId, route: state.route });
+    clearInterval(timer); thinking.remove();
+    const body = r.body || {};
+    const sid = body.session_id || (body.detail && body.detail.session_id);
+    if (sid) { state.sessionId = sid; $('sessionId').textContent = sid.slice(0, 8); }
+    if (r.status === 200) {
+      const tools = body.debug.tool_calls;
+      const blocked = tools.filter((c) => c.blocked).length;
+      addMsg('agent', richText(body.output), el('div', { class: 'meta' }, `${r.elapsed_ms} ms · ${tools.length} tool${tools.length === 1 ? '' : 's'}${blocked ? ` · ${blocked} bloqueada${blocked === 1 ? '' : 's'}` : ''}`));
+    } else {
+      const why = r.status === 403 && body.error === 'AgentBlocked' ? 'Bloqueado en Foundry (403 AgentBlocked)'
+        : r.status === 403 ? 'Rechazado por AWS: sin pasar por el AI Gateway (403)'
+        : r.status === 503 ? 'El agente falló (503)'
+        : 'HTTP ' + r.status;
+      const detail = body.message || (body.detail && (body.detail.error || body.detail)) || body.error || '';
+      addMsg('err', el('strong', {}, why), el('div', { class: 'meta' }, typeof detail === 'string' ? detail : JSON.stringify(detail)));
+    }
+    renderAgentTrace(r);
+    log('agente', r.status, r.elapsed_ms, r.route === 'direct' ? '(directo)' : '');
+  } catch (e) {
+    clearInterval(timer); thinking.remove();
+    addMsg('err', el('strong', {}, 'Error local'), el('div', { class: 'meta' }, String(e)));
+  } finally {
+    state.busy = false; $('sendBtn').disabled = false; $('msg').focus(); pollStatus();
+  }
+}
+
+// ---------- tool controls: AI Gateway (block the call) and Toolbox (publish a version without the tool) ----------
+function renderTools() {
+  const box = $('tools'); box.replaceChildren();
+  box.append(el('div', { class: 'th' }, 'Tool'), el('div', { class: 'th' }, 'Toolbox · Foundry'), el('div', { class: 'th' }, 'AI Gateway · Azure'));
+  const sw = (on, label, onclick, disabled) => el('button', { type: 'button', class: 'switch', role: 'switch', 'aria-checked': on, 'aria-label': label, onclick, ...(disabled ? { disabled: '' } : {}) });
+  state.tools.forEach((t) => {
+    const gw = state.blocked.includes(t), tb = state.tbBlocked.includes(t);
+    box.append(
+      el('div', { class: 'tn' + (gw || tb ? ' on' : '') }, t),
+      el('div', { class: 'cell' + (state.toolbox ? '' : ' off'), title: state.toolbox ? 'En el Toolbox: activado = fuera de la versión publicada' : 'Sin Toolbox configurado (scripts/toolbox.sh --create)' },
+        sw(tb, (tb ? 'Volver a publicar ' : 'Quitar del Toolbox ') + t, () => toggleToolbox(t), !state.toolbox)),
+      el('div', { class: 'cell' }, sw(gw, (gw ? 'Desbloquear ' : 'Bloquear ') + t + ' en el gateway', () => toggleTool(t))));
+  });
+}
+
+async function applyControl(kind, next, path) {
+  $('gwNote').textContent = kind === 'toolbox' ? 'Publicando una versión nueva del Toolbox…' : 'Aplicando en API Management…';
+  document.querySelectorAll('.switch').forEach((s) => (s.disabled = true));
+  const t0 = performance.now();
+  const r = await api(path, { tools: next });
+  const secs = ((performance.now() - t0) / 1000).toFixed(1);
+  if (r.error) $('gwNote').textContent = 'Error: ' + r.error;
+  else {
+    if (kind === 'toolbox') state.tbBlocked = r.blocked; else state.blocked = r.blocked;
+    const where = kind === 'toolbox' ? 'Fuera del Toolbox' : 'Bloqueadas en el gateway';
+    $('gwNote').textContent = (next.length ? where + ': ' + next.join(', ') : kind === 'toolbox' ? 'El Toolbox publica todas las tools' : 'Ninguna tool bloqueada en el gateway') + ` · ${r.version ? 'versión ' + r.version + ' publicada · ' : ''}${secs} s, sin desplegar nada`;
+    log(kind, 200, Math.round(performance.now() - t0), next.length ? 'bloquea ' + next.join(',') : 'desbloquea todo');
+  }
+  renderTools();
+}
+const toggleTool = (tool) => applyControl('gateway', state.blocked.includes(tool) ? state.blocked.filter((t) => t !== tool) : [...state.blocked, tool], '/api/blocked');
+const toggleToolbox = (tool) => applyControl('toolbox', state.tbBlocked.includes(tool) ? state.tbBlocked.filter((t) => t !== tool) : [...state.tbBlocked, tool], '/api/toolbox');
+
+async function tryTool() {
+  let args;
+  try { args = JSON.parse($('tryArgs').value || '{}'); } catch (e) { $('gwNote').textContent = 'Los argumentos no son JSON válido.'; return; }
+  // The agent's own path: Foundry Toolbox → AI Gateway → MCP. "Directo a AWS" skips both, to show the 403.
+  const route = state.route === 'direct' ? 'direct' : state.toolbox ? 'toolbox' : 'gateway';
+  const r = await api('/api/mcp', { tool: $('tryTool').value, args, user_id: $('userId').value, route });
+  renderMcpTrace(r);
+  log('tool ' + r.tool, r.status, r.elapsed_ms, r.blocked_by === 'toolbox' ? 'RECHAZADA (toolbox)' : r.blocked ? 'BLOQUEADA' : r.route === 'gateway' ? '' : '(' + r.route + ')');
+}
+
+const EXAMPLE_ARGS = {
+  search_guachinches: '{"location": "Tacoronte", "limit": 3}',
+  get_guachinche: '{"guachinche_id": "<id de una búsqueda>"}',
+  list_locations: '{}',
+  add_favorite: '{"guachinche_id": "<id de una búsqueda>", "note": "probar el conejo"}',
+  remove_favorite: '{"guachinche_id": "<id>"}',
+  list_favorites: '{}'
+};
+
+// ---------- start ----------
+(async function init() {
+  const cfg = await api('/api/config');
+  state.tools = cfg.tools; state.toolbox = !!cfg.toolbox;
+  cfg.tools.forEach((t) => $('tryTool').append(el('option', { value: t }, t)));
+  $('tryTool').addEventListener('change', () => ($('tryArgs').value = EXAMPLE_ARGS[$('tryTool').value] || '{}'));
+  SUGGESTIONS.forEach((s) => $('suggest').append(el('button', { type: 'button', onclick: () => send(s) }, s)));
+  $('sendForm').addEventListener('submit', (e) => { e.preventDefault(); send($('msg').value); });
+  $('routeGw').addEventListener('click', () => setRoute('gateway'));
+  $('routeDirect').addEventListener('click', () => setRoute('direct'));
+  $('newSession').addEventListener('click', newSession);
+  $('tryBtn').addEventListener('click', tryTool);
+  renderTools();
+  addMsg('agent', '¡Hola! Te ayudo a encontrar un guachinche en Tenerife para comer. ¿Por qué zona andas?');
+  pollStatus(); setInterval(pollStatus, 5000);
+  try { state.blocked = (await api('/api/blocked')).blocked; renderTools(); } catch (e) {}
+  if (state.toolbox) try { state.tbBlocked = (await api('/api/toolbox')).blocked; renderTools(); } catch (e) {}
+})();
+</script>
+</body>
+</html>

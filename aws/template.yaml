@@ -1,0 +1,149 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: Guachinche agent (Strands + Amazon Bedrock) and its guachinches MCP server, governed from Microsoft Foundry through the AI Gateway.
+
+Parameters:
+  AgentName:
+    Type: String
+    Default: guachinche-agent
+    Description: Must match the Agent name / OpenTelemetry agent ID used when registering the agent in Foundry.
+  BedrockModelId:
+    Type: String
+    Default: global.anthropic.claude-sonnet-4-6
+    Description: Bedrock model or inference profile id. Model access must be enabled in this account and region.
+  BedrockRegion:
+    Type: String
+    Default: ""
+    Description: Optional. Region for Bedrock calls when it differs from the Lambda's (e.g. where your quotas are). Empty = same region.
+  AgentApiKey:
+    Type: String
+    NoEcho: true
+    MinLength: 16
+    Description: Value clients send in the x-agent-key header (Foundry passes it through to the origin).
+  McpApiKey:
+    Type: String
+    NoEcho: true
+    MinLength: 16
+    Description: Key the MCP server requires in x-mcp-key. Only Foundry holds it (the Toolbox's project connection); the agent doesn't.
+  AppInsightsConnectionString:
+    Type: String
+    NoEcho: true
+    Description: Connection string of the Application Insights resource connected to the Foundry project.
+  GatewaySharedSecret:
+    Type: String
+    NoEcho: true
+    Default: ""
+    Description: Optional. When set, both Lambdas only accept requests carrying x-foundry-gateway with this value (added by the AI Gateway).
+  ToolboxUrl:
+    Type: String
+    Default: ""
+    Description: Consumer MCP endpoint of the Foundry Toolbox with the guachinches tools (scripts/toolbox.sh). The agent's only source of tools; empty = no tools (bootstrap).
+  AzureTenantId:
+    Type: String
+    Default: ""
+    Description: Optional. Entra tenant of the service principal the agent uses to call the Toolbox.
+  AzureClientId:
+    Type: String
+    Default: ""
+    Description: Optional. Client id of that service principal (scripts/toolbox-identity.sh).
+  AzureClientSecret:
+    Type: String
+    NoEcho: true
+    Default: ""
+    Description: Optional. Client secret of that service principal.
+
+Globals:
+  Function:
+    Runtime: python3.13
+    Architectures: [arm64]
+    MemorySize: 1024
+    # SAM adds the public lambda:InvokeFunctionUrl + lambda:InvokeFunction permissions for us; the
+    # apps enforce their own keys (and x-foundry-gateway when the origin is locked).
+    FunctionUrlConfig:
+      AuthType: NONE
+
+Resources:
+  FavoritesTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - { AttributeName: user_id, AttributeType: S }
+        - { AttributeName: guachinche_id, AttributeType: S }
+      KeySchema:
+        - { AttributeName: user_id, KeyType: HASH }
+        - { AttributeName: guachinche_id, KeyType: RANGE }
+
+  # Conversation history per session (Strands S3SessionManager), kept for a week.
+  SessionsBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      LifecycleConfiguration:
+        Rules:
+          - Id: expire-sessions
+            Status: Enabled
+            ExpirationInDays: 7
+
+  McpFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub ${AgentName}-mcp
+      CodeUri: mcp/
+      Handler: server.handler
+      Timeout: 30
+      Environment:
+        Variables:
+          SERVICE_NAME: guachinches-mcp
+          FAVORITES_TABLE: !Ref FavoritesTable
+          MCP_API_KEY: !Ref McpApiKey
+          APPLICATIONINSIGHTS_CONNECTION_STRING: !Ref AppInsightsConnectionString
+          GATEWAY_SHARED_SECRET: !Ref GatewaySharedSecret
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref FavoritesTable
+
+  AgentFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Ref AgentName
+      CodeUri: agent/
+      Handler: app.handler
+      Timeout: 120
+      Environment:
+        Variables:
+          AGENT_NAME: !Ref AgentName
+          BEDROCK_MODEL_ID: !Ref BedrockModelId
+          BEDROCK_REGION: !Ref BedrockRegion
+          AGENT_API_KEY: !Ref AgentApiKey
+          TOOLBOX_URL: !Ref ToolboxUrl
+          AZURE_TENANT_ID: !Ref AzureTenantId
+          AZURE_CLIENT_ID: !Ref AzureClientId
+          AZURE_CLIENT_SECRET: !Ref AzureClientSecret
+          SESSIONS_BUCKET: !Ref SessionsBucket
+          APPLICATIONINSIGHTS_CONNECTION_STRING: !Ref AppInsightsConnectionString
+          GATEWAY_SHARED_SECRET: !Ref GatewaySharedSecret
+      Policies:
+        - S3CrudPolicy:
+            BucketName: !Ref SessionsBucket
+        - Statement:
+            - Effect: Allow
+              Action:
+                - bedrock:InvokeModel
+                - bedrock:InvokeModelWithResponseStream
+              Resource:
+                - arn:aws:bedrock:*::foundation-model/*
+                - !Sub arn:aws:bedrock:*:${AWS::AccountId}:inference-profile/*
+                - arn:aws:bedrock:::foundation-model/*
+
+Outputs:
+  AgentUrl:
+    Description: Agent origin URL. Register it in Foundry Control Plane as the custom agent's "Agent URL".
+    Value: !GetAtt AgentFunctionUrl.FunctionUrl
+  McpUrl:
+    Description: MCP server origin endpoint. Register it in Foundry as a custom MCP tool.
+    Value: !Sub "${McpFunctionUrl.FunctionUrl}mcp"

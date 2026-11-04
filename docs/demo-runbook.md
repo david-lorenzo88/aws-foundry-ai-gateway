@@ -300,10 +300,10 @@ Traces and run counts).
 
 ## B. Live demo (about 8 minutes)
 
-This is **demo 2** of the session (AI Gateway, David). Demo 1 (Hosted Agent, Jorge) already cuts a tool from
-a Toolbox, so here the tool cut is quick ("the same Toolbox, but the agent is in AWS") and the time goes to
-what only the AI Gateway gives: an agent outside Azure in the inventory, one trace across clouds, Block, and
-the origin lock. Deck order: Preguntar → Trazar → Cortar una tool → Bloquear → ¿Y directo? → Desbloquear.
+This is **demo 2** of the session (AI Gateway, David). Demo 1 (Hosted Agent, Jorge) already cuts a tool at
+the AI Gateway (an APIM named value), so here the new part is the Toolbox ("the agent doesn't even see the
+tool") and the time goes to what an agent outside Azure needs: the inventory, one trace across clouds, Block,
+and the origin lock. Deck order: Preguntar → Trazar → Cortar una tool → Bloquear → ¿Y directo? → Desbloquear.
 
 1. **"Lunch in Tenerife? A guachinche."** This agent isn't ours, or rather it isn't in Azure: Lambda +
    Strands + Bedrock, and its tools are an MCP server also on Lambda. No Microsoft code besides an OTel exporter.

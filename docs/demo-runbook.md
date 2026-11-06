@@ -224,7 +224,7 @@ scripts/toolbox.sh --none                         # every tool again
 
 Or in the **Foundry portal**: **Build > Tools > Toolboxes > guachinches**, select the `guachinches-mcp` entry,
 and in **Allowed guachinches-mcp tools** list the tools to keep (comma-separated; empty = all). **Save** creates a
-new version. Also possible from VS Code (Foundry Toolkit), `azd ai toolbox` or the Foundry SDKs.
+new version, which only takes effect after **Set as default** in the version menu. Also possible from VS Code (Foundry Toolkit), `azd ai toolbox` or the Foundry SDKs.
 
 Details of the Toolbox worth knowing:
 
@@ -325,7 +325,7 @@ and the origin lock. Deck order: Preguntar → Trazar → Cortar una tool → Bl
    Same view as the .NET agent's.
 5. **Cut a tool live, from Foundry.** "The favourites tool writes to a database. Let's leave the agent
    read-only." In the Foundry portal (**Build > Tools > Toolboxes > guachinches**), remove `add_favorite` and
-   `remove_favorite` from the allowed tools and **Save**; or switch them off in the web's **Toolbox** column, or:
+   `remove_favorite` from the allowed tools, **Save**, then **Set as default** in the version menu; or switch them off in the web's **Toolbox** column, or:
    ```bash
    scripts/toolbox.sh add_favorite remove_favorite
    ```

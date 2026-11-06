@@ -8,6 +8,7 @@
 #
 # A Toolbox version is an immutable list of tools; agents read the default version. Leaving a tool out of
 # allowed_tools hides it from tools/list and makes the Toolbox reject calls to it (PermissionDenied).
+# allowed_tools uses {"tool_names": [...]}, the form the Foundry portal shows; it leaves a plain list's field empty.
 # The Toolbox reaches the MCP server through the AI Gateway (the project connection Foundry created when
 # the MCP tool was registered), so the gateway's own controls (scripts/block-tool.sh) still apply.
 source "$(dirname "$0")/common.sh"
@@ -31,7 +32,9 @@ if [[ "$1" == --status ]]; then
   api GET "/toolboxes/$TOOLBOX/versions/$DEFAULT" | python3 -c '
 import json, sys
 tool = json.load(sys.stdin)["tools"][0]
-print("allowed tools:  ", ", ".join(tool.get("allowed_tools") or ["(all)"]))'
+allowed = tool.get("allowed_tools") or {}
+if isinstance(allowed, dict): allowed = allowed.get("tool_names") or []  # older versions hold a plain list
+print("allowed tools:  ", ", ".join(allowed or ["(all)"]))'
   exit 0
 fi
 
@@ -51,7 +54,7 @@ url, connection, blocked, allowed = sys.argv[1], sys.argv[2], sys.argv[3], sys.a
 print(json.dumps({
     "description": "Guachinches de Tenerife (MCP on AWS, via the Foundry AI Gateway). Blocked: " + (blocked or "none"),
     "tools": [{"type": "mcp", "server_label": "guachinches", "server_url": url, "require_approval": "never",
-               "project_connection_id": connection, "allowed_tools": allowed}],
+               "project_connection_id": connection, "allowed_tools": {"tool_names": allowed}}],
 }))' "$MCP_GATEWAY_URL" "$CONNECTION" "$BLOCKED" "$ALLOWED")"
 VERSION="$(api POST "/toolboxes/$TOOLBOX/versions" "$BODY" | python3 -c 'import json,sys; print(json.load(sys.stdin)["version"])')"
 api PATCH "/toolboxes/$TOOLBOX" "{\"default_version\": \"$VERSION\"}" > /dev/null
